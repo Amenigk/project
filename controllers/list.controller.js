@@ -55,6 +55,8 @@ exports.getList = async(req,res)=>{
         //  res.send(flylist)
         res.send(flylist.map(el=>{
             let info={}
+            info.location=el.location;
+            info._id=el._id;
             info.fly=el.fly;
             info.free_places=el.free_places
         return info
