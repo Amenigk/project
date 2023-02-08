@@ -1,0 +1,4 @@
+{
+    "db":"mongodb+srv://Ameni:5X5jwy3AFwUtyU4n@cluster0.velfllu.mongodb.net/finalproject?retryWrites=true&w=majority",
+    "secret": "isSecret"
+}
