@@ -24,9 +24,9 @@ const City = () => {
       <div>
 
         {list?.map((elt)=> 
-                 <div>
+                 <div className='flylist'>
                  <h2> {elt.fly} </h2> 
-                  <p>      {elt.free_places}         </p>           
+                  <h2>    {elt.free_places}         </h2>           
                   </div>                                  )}
         {/* <p>  {list?.map((elt)=> <h2> {elt.free_places} </h2>  )}  </p> */}
 
