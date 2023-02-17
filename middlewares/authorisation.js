@@ -17,9 +17,10 @@ try {
 
    if(!user){
     return res.status(401).json({msg:"unauthorized"})
+    
    } else{
-    next()
-    res.send(user)
+       req.user=user;
+       next()
    }
 
 } catch (error) {

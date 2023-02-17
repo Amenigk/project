@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import {Form,Button} from 'react-bootstrap';
+import {Form} from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, Navigate } from 'react-router-dom';
 import { register } from '../redux/actions';
-
+import './styleSheet.css'
 
 const Signup = () => {
    
@@ -32,7 +32,7 @@ const Signup = () => {
         user? <Navigate to="/User/SignIn" />
         :
       
-     <Form onSubmit={handleSubmit}>
+     <Form  className='formclass' onSubmit={handleSubmit}>
      
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
@@ -59,9 +59,7 @@ const Signup = () => {
       </Form.Group>
        
       
-      <Button variant="primary" type="submit">
-        Submit
-      </Button>
+      <button id='bb' type="submit">   Submit     </button>
 
       <br /><br /><br />
      

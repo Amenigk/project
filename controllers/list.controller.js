@@ -58,7 +58,9 @@ exports.getList = async(req,res)=>{
             info.location=el.location;
             info._id=el._id;
             info.fly=el.fly;
-            info.free_places=el.free_places
+            info.free_places=el.free_places;
+            info.image=el.image;
+            info.description=el.description
         return info
         }))  
        

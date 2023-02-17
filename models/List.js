@@ -9,8 +9,9 @@ const listSchema = new Schema(
     free_places:{type:Number,
                     default:6 },
     reserved_places:{type:Number,
-                default:0 }
-               
+                default:0 },
+    description:String,
+    image:String                           
     })
 
 module.exports = mongoose.model("List",listSchema)

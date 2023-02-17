@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import {Form,Button} from 'react-bootstrap';
+import {Form} from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom';
 import { login } from '../redux/actions';
-
+import './styleSheet.css'
 
 
 const SignIn = () => {
@@ -32,7 +32,7 @@ const SignIn = () => {
         : 
     
 
-     <Form className='' onSubmit={handleSubmit}>
+     <Form className='formclass' onSubmit={handleSubmit}>
      
      <Form.Group className="mb-3" controlId="formBasicEmail">
        <Form.Label>Email address</Form.Label>
@@ -46,9 +46,7 @@ const SignIn = () => {
        <Form.Label>Password</Form.Label>
        <Form.Control type="password" placeholder="Password" value={password} onChange={(e)=>setPassword(e.target.value)} />
      </Form.Group>
-     <Button variant="primary" type="submit">
-        Submit
-      </Button>
+     <button id="bb" type="submit">     Submit   </button>
      </Form>
 
      }

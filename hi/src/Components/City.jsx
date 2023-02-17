@@ -11,37 +11,44 @@ const City = () => {
     console.log(params)
     const [location, setLocation] = useState("")
     const {loading,list} = useSelector(state=>state) 
-   
+
+
     useEffect(() => {
         dispatch(getList(params))
         
       }, [])
      
-     
+    
     
   return (
     <div>
       {loading? <h3> loading...</h3>:
-  <div>
-  <h1> List Of Available Flys and Dates </h1>
-   
+    <div className='div_city'>
+    <h1> {params.location} </h1>
+    <h2> Select Your Flight  </h2>
+    <br/>
   <table className='flylist'>
   <tr >
-    <th>Fly time</th>
+    <th>Flight time</th>
     <th>Free Places</th>
-    <th>Booking</th>
+    <th> Reservation </th>
   </tr>
+
   {list?.map((elt)=> 
-  <tr>
+   <tr>
     <td>{elt.fly}</td>
     <td>{elt.free_places}</td>
-    <td> <Link to={`/Booking/${elt._id}`}  >  Booking </Link> </td>
+    <td> <Link to={`/Booking/${elt._id}`}  >  Book Now </Link> </td>
   </tr>
   )}
   </table>
         
       </div>}
-       
+       <br/>
+       <br/>
+       <br/>
+       <br/>
+
     </div>
   )
 }

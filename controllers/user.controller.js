@@ -66,3 +66,7 @@ exports.login = async(req,res) =>{
     res.status(500).json({msg:error.message})
   }
 }
+
+exports.getProfile = (req,res) =>{
+  res.send(req.user)
+}

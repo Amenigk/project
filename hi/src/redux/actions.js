@@ -1,4 +1,4 @@
-import { GETLIST, GETLIST_FAIL, GETLIST_SUCCESS, LOGIN, LOGIN_FAIL, LOGIN_SUCCESS, PROFILE, PROFILE_FAIL, PROFILE_SUCCESS, REGISTER, REGISTER_FAIL, REGISTER_SUCCESS, UPDATELIST, UPDATELIST_FAIL, UPDATELIST_SUCCESS, UPDATESLIST, UPDATESLIST_FAIL, UPDATESLIST_SUCCESS } from "./actionTypes"
+import { GETLIST, GETLIST_FAIL, GETLIST_SUCCESS, LOGIN, LOGIN_FAIL, LOGIN_SUCCESS, PROFILE, PROFILE_FAIL, PROFILE_SUCCESS, REGISTER, REGISTER_FAIL, REGISTER_SUCCESS, UPDATELIST, UPDATELIST_FAIL, UPDATELIST_SUCCESS} from "./actionTypes"
 import axios from "axios"
 
 
@@ -30,12 +30,19 @@ export const getList = (newLocation) => async(dispatch)=>
 
 //  user  Actions
 export const updatelist = (newResPlaces,x) => async(dispatch)=>
-{
+{   
+    const token= localStorage.getItem("token")
     dispatch({
         type :UPDATELIST
     })
+    const  config ={
+        headers:{
+            Authorization:token 
+        }
+    }
+
     try {
-        const res = await axios.put(`/list/updatelist/${x}`,newResPlaces) 
+        const res = await axios.put(`/list/updatelist/${x}`,newResPlaces,config) 
         console.log(res)
         dispatch({
             type: UPDATELIST_SUCCESS,
