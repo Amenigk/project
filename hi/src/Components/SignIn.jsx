@@ -28,7 +28,7 @@ const SignIn = () => {
      {
         loading ? <h3>  loading ...</h3> :
         localStorage.getItem("token")? 
-        <Navigate to="/User/Profile"/>
+        <Navigate to="/User/Profile/:name"/>
         : 
     
 

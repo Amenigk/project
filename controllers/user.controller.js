@@ -70,3 +70,22 @@ exports.login = async(req,res) =>{
 exports.getProfile = (req,res) =>{
   res.send(req.user)
 }
+
+exports.saveRes = async(req,res) => {
+
+  const {reservationPlace,reservationTime,places} = req.body
+  
+
+  try {
+      const user = await User.findById(req.params.x)
+          
+      console.log(user) 
+      const  savedRes= await User.findByIdAndUpdate(req.params.x,req.body,{new: true})
+
+      res.send(savedRes)  
+
+  } catch (error) {
+      res.status(500).json({msg:error.message})
+  }
+
+}

@@ -7,8 +7,8 @@ import Signup from './Components/Signup';
 import SignIn from './Components/SignIn';
 import Profile from './Components/Profile';
 import Booking from './Components/Booking';
-import { Media } from './Components/Media';
 import VideoExperience from './Components/VideoExperience';
+import UserAcompte from './Components/UserAcompte';
 
 
 
@@ -27,7 +27,7 @@ function App() {
              <Link  to="#">Deals</Link>
              <Link  to="/VideoExperience">Video Experience </Link>
              <Link  to="/Signup"> Register </Link>
-             <Link  to="/User/SignIn"> Login </Link>
+             <Link  to="/User/SignIn"> LogIn  </Link>
              <Link  to="#"> Contacts </Link>
         </div>
      </nav>
@@ -42,12 +42,10 @@ function App() {
       <Route path="/VideoExperience" element={<VideoExperience/>}/>
       <Route path="/Signup" element={<Signup/>}/>
       <Route path="/User/SignIn" element={<SignIn/>}/>
-      <Route path="/User/Profile" element={<Profile/>}/>
+      <Route path="/UserAcompte/:name" element={<UserAcompte/>}/>
+      <Route path="/User/Profile/:name" element={<Profile/>}/>
       
-
-
-   
-
+      
    </Routes>
    </BrowserRouter>
     

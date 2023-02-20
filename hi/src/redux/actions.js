@@ -1,4 +1,9 @@
-import { GETLIST, GETLIST_FAIL, GETLIST_SUCCESS, LOGIN, LOGIN_FAIL, LOGIN_SUCCESS, PROFILE, PROFILE_FAIL, PROFILE_SUCCESS, REGISTER, REGISTER_FAIL, REGISTER_SUCCESS, UPDATELIST, UPDATELIST_FAIL, UPDATELIST_SUCCESS} from "./actionTypes"
+import { GETLIST, GETLIST_FAIL, GETLIST_SUCCESS,
+         LOGIN, LOGIN_FAIL, LOGIN_SUCCESS,
+         PROFILE, PROFILE_FAIL, PROFILE_SUCCESS,
+         REGISTER, REGISTER_FAIL, REGISTER_SUCCESS,
+         UPDATELIST, UPDATELIST_FAIL, UPDATELIST_SUCCESS,
+         SAVERES, SAVERES_FAIL, SAVERES_SUCCESS} from "./actionTypes"
 import axios from "axios"
 
 
@@ -29,6 +34,35 @@ export const getList = (newLocation) => async(dispatch)=>
 
 
 //  user  Actions
+export const saveRes = (newRes,x) => async(dispatch)=>
+{   
+    const token= localStorage.getItem("token")
+    dispatch({
+        type :SAVERES
+    })
+    const  config ={
+        headers:{
+            Authorization:token 
+        }
+    }
+
+    try {
+        const res = await axios.put(`/user/saveRes/${x}`,newRes,config) 
+        console.log(res)
+        dispatch({
+            type: SAVERES_SUCCESS,
+            payload : res.data
+
+        })
+    } catch (error) {
+            dispatch({
+            type: SAVERES_FAIL,
+            payload : error.response.data
+        })
+    }
+}
+
+
 export const updatelist = (newResPlaces,x) => async(dispatch)=>
 {   
     const token= localStorage.getItem("token")

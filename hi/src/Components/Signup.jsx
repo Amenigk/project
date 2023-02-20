@@ -29,7 +29,7 @@ const Signup = () => {
     <div>
       {
         loading ? <h3> loading ....   </h3>:
-        user? <Navigate to="/User/SignIn" />
+        user? <Navigate to="/Signup" />
         :
       
      <Form  className='formclass' onSubmit={handleSubmit}>

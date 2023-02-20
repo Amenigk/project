@@ -1,4 +1,8 @@
 
+export const SAVERES ="SAVERES"
+export const SAVERES_SUCCESS ="SAVERES_SUCCESS"
+export const SAVERES_FAIL ="SAVERES_FAIL"
+
 
 export const GETLIST ="GETLIST"
 export const GETLIST_SUCCESS ="GETLIST_SUCCESS"
