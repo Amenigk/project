@@ -230,7 +230,7 @@ float: left;
    } 
    .div_booking{
     background-color: rgb(218, 219, 221);
-    height: 800px;
+    height: 600px;
     width: 1200px;
     margin-left: 70px;
     font-family: 'Courgette', cursive;
@@ -238,8 +238,9 @@ float: left;
        }
 
     .div_tab{
-      width:100%;
-      /* height: 200px; */
+      width:1000px;
+      height: 120px;
+      margin-left: 70px;
     }   
 
 
@@ -253,23 +254,33 @@ float: left;
   
    .div_booking h3 ,p{
    text-align: left;
-   padding-left: 20px ;
+   padding-left: 30px ;
       }
       
-   .div_res input  {
+   .div_res   {
     display: block;
-    text-align: left;
+    justify-content: center;
+    text-align: center;
     width:fit-content ;
     height: 40px;
-    }
-    .div_res >#bb  {
-      display: block;
-      text-align: left;
-      width:fit-content ;
-      height: 40px;
-      }
 
-    .div_booking h4{
+    }
+    
+    /* .div_res   input{
+      display: block;
+      text-align: center;
+      
+      width: 40px; ;
+      height: 40px;
+      } */
+      .div_res  h3{
+        display: block;
+        text-align: center;
+        height: 40px;
+        }
+      
+
+    .div_res h4{
       font-family: Arial, Helvetica, sans-serif;
       font-size: xx-large;
       font-weight: bolder;
@@ -279,6 +290,17 @@ float: left;
       text-align: center;
      
       }
+
+
+      .div_confirm{
+      display: flex;
+     justify-content: space-around;
+     background-color: #f7f4ef;
+     width: 1000px;
+     margin-left: 150px;
+      }
+      
+
    .foot{
     font-family: Roboto, Arial, sans-serif;
     Font-size: 18px;

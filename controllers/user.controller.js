@@ -89,3 +89,7 @@ exports.saveRes = async(req,res) => {
   }
 
 }
+
+exports.getReservation = (req,res) =>{
+  res.send(req.user)
+}

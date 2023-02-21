@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, Navigate, useLocation} from 'react-router-dom'
-import { profile, saveRes, updatelist } from '../redux/actions'
+import { getReservation, profile, saveRes, updatelist } from '../redux/actions'
 
 function UserAcompte(props) {
 
@@ -14,24 +14,13 @@ function UserAcompte(props) {
 
     useEffect(() => {
 
-        dispatch(profile(user))
+      dispatch(getReservation(user))
         
       }, [])
 
       const logout= (e) => {
         localStorage.removeItem("token")}
      
-    const handleReserSave=(e)=>{
-          const newRes={
-            reservationPlace:`${eltp.location}`,
-            reservationTime:`${eltp.fly}`,
-            // places:Number
-                  }
-            dispatch(saveRes(newRes,user._id))
-              }
-       
-
-
   return (
       <div> 
       
@@ -39,26 +28,28 @@ function UserAcompte(props) {
         !autho ? <Navigate to="/User/SignIn" />
         :
      <div>
-     <h2> Summary of Reservation </h2>
+     <h3> Hello  {user.name} </h3> 
      <br />
-     <h3> {user.name}</h3> 
-     <h3> Reserved Location </h3>
-     <h3> {eltp.location}</h3> 
-     <h3> Reserved Flight  </h3>
-     <h3> {eltp.fly}</h3> 
-     <h3> Places needed   </h3>
-     {/* <h3> {places}  </h3> */}
-    
+     <h2> Summary of Reservation </h2>
+     <br /><br /><br />
+     <div className='div_confirm'>
+     <div><h3> Destination </h3>  <h3> {eltp.location}</h3>  </div>
+     
+     <div><h3> Reserved Flight  </h3>   <h3> {eltp.fly}</h3> </div>
+     
+     <div> <h3> Places needed </h3>      <h3> {user.places}  </h3> </div>
+     </div>
+     
      <div>
      
-     {/* <input type="Number"  placeholder='Enter the number of persons ' value={reserved_places} onChange={(e)=>setReserved_places(e.target.value)}/> */}
-     <button id="bb" onClick={handleReserSave}> Confirm </button>
-     </div>
+     <br />
+     <Link to="#"  >Get Your Ticket</Link>
+
      <br />
      <Link to="/User/SignIn" onClick={logout} >LOG OUT</Link>
-     {/* <button type="button" class="btn btn-link"  onClick={logout}> LOG OUT </button> */}
-   
-    </div>
+     </div>
+     </div>
+    
     }
     </div>
   )

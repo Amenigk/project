@@ -3,7 +3,7 @@ import { GETLIST, GETLIST_FAIL, GETLIST_SUCCESS,
          PROFILE, PROFILE_FAIL, PROFILE_SUCCESS,
          REGISTER, REGISTER_FAIL, REGISTER_SUCCESS,
          UPDATELIST, UPDATELIST_FAIL, UPDATELIST_SUCCESS,
-         SAVERES, SAVERES_FAIL, SAVERES_SUCCESS} from "./actionTypes"
+         SAVERES, SAVERES_FAIL, SAVERES_SUCCESS, GETRESERVATION, GETRESERVATION_SUCCESS, GETRESERVATION_FAIL} from "./actionTypes"
 import axios from "axios"
 
 
@@ -160,6 +160,33 @@ export const profile = (newUser) => async(dispatch)=>
     } catch (error) {
             dispatch({
             type: PROFILE_FAIL,
+            payload : error.response.data
+        })
+    }
+}
+export const getReservation = (User) => async(dispatch)=>
+{   
+    const token= localStorage.getItem("token")
+    dispatch({
+        type :GETRESERVATION
+    })
+    const  config ={
+        headers:{
+            Authorization:token 
+        }
+    }
+
+    try {
+        const res = await axios.get("/user/getReservation",config) //config must be the last things after all params
+        console.log(res)
+        dispatch({
+            type: GETRESERVATION_SUCCESS,
+            payload : res.data
+
+        })
+    } catch (error) {
+            dispatch({
+            type: GETRESERVATION_FAIL,
             payload : error.response.data
         })
     }
