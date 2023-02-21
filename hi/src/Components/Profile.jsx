@@ -28,16 +28,18 @@ const Profile = () => {
 
     return (
       <div> 
-      
+      <br />
         {loading? <h2> loading ...</h2>:
         !autho ? <Navigate to="/User/SignIn" />
         :
-     <div>
-     
-     <h3> {user.name}</h3>  
-     <h3> {user.email}</h3>
-     <h3> {user.phone}</h3>  
+      <div><h3> My Profile </h3>  
+      <br /><br />
+     <div  className='div_Profile'>
+     <div><p> Name </p>  <p> {user.name} </p> </div>
+     <div><p> Email </p>  <p> {user.email} </p> </div>
+     <div> <p> Phone </p>  <p> {user.phone}</p>  </div>
     
+    </div>
     </div>
     }
     </div>

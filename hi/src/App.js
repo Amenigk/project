@@ -9,6 +9,7 @@ import Profile from './Components/Profile';
 import Booking from './Components/Booking';
 import VideoExperience from './Components/VideoExperience';
 import UserAcompte from './Components/UserAcompte';
+import { Contacts } from './Components/Contacts';
 
 
 
@@ -28,7 +29,7 @@ function App() {
              <Link  to="/VideoExperience">Video Experience </Link>
              <Link  to="/Signup"> Register </Link>
              <Link  to="/User/SignIn"> LogIn  </Link>
-             <Link  to="#"> Contacts </Link>
+             <Link  to="/Contacts"> Contacts </Link>
         </div>
      </nav>
      <hr/>
@@ -44,6 +45,7 @@ function App() {
       <Route path="/User/SignIn" element={<SignIn/>}/>
       <Route path="/UserAcompte/:name" element={<UserAcompte/>}/>
       <Route path="/User/Profile/:name" element={<Profile/>}/>
+      <Route path="/Contacts" element={<Contacts/>}/>
       
       
    </Routes>

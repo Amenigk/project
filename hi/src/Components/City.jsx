@@ -39,7 +39,7 @@ const City = () => {
     <td>{elt.fly}</td>
     <td>{elt.free_places}</td>
     <td> 
-    { elt.free_places>0?   <Link to={`/Booking/${elt._id}`}  >  Book Now </Link>:  <h5> No free places for this flight </h5>}  </td>
+    { elt.free_places>0?   <Link to={`/Booking/${elt._id}`}  >  Book Now </Link>:  <h5 > No free places for this flight </h5>}  </td>
   </tr>
   )}
   </table>
