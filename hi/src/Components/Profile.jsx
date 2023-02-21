@@ -15,14 +15,7 @@ const Profile = () => {
       dispatch(profile(user))
       
     }, [])
-
-    // const handleReservation=(e)=>{
-    //   const newResPlaces={
-    //      reserved_places
-    //           }
-    //     dispatch(updatelist(newResPlaces,eltp._id))
-    //       }
-
+ 
     const logout= (e) => {
         localStorage.removeItem("token")}
 
@@ -42,6 +35,8 @@ const Profile = () => {
     </div>
     </div>
     }
+    <br />
+     <Link to="/User/SignIn" onClick={logout} > <h5> LOG OUT </h5></Link>
     </div>
   )
 }

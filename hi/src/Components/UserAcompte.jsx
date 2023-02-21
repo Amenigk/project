@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, Navigate, useLocation} from 'react-router-dom'
-import { getReservation, profile, saveRes, updatelist } from '../redux/actions'
+import { getReservation} from '../redux/actions'
 
 function UserAcompte(props) {
 
@@ -43,10 +43,10 @@ function UserAcompte(props) {
      <div>
      
      <br />
-     <Link to="#"  >Get Your Ticket</Link>
+     <Link to="#" > <h6> Get Your Ticket </h6></Link>
 
      <br />
-     <Link to="/User/SignIn" onClick={logout} >LOG OUT</Link>
+     <Link to="/User/SignIn" onClick={logout} ><h5> LOG OUT </h5></Link>
      </div>
      </div>
     

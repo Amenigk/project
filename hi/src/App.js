@@ -9,15 +9,14 @@ import Profile from './Components/Profile';
 import Booking from './Components/Booking';
 import VideoExperience from './Components/VideoExperience';
 import UserAcompte from './Components/UserAcompte';
-import { Contacts } from './Components/Contacts';
+import  Contacts  from './Components/Contacts';
 
 
 
 function App() {
   return (
     <div className="App">
-    
-    <BrowserRouter>  
+     <BrowserRouter>  
      <nav className="navbar">
         <div className='nav_logo'>
         <img  id='logoimg' src='../logo2.png' alt='logo'/>  
@@ -35,6 +34,7 @@ function App() {
      <hr/>
         
     
+   
    <Routes>
     
       <Route path="/" element={<Home/>}/>

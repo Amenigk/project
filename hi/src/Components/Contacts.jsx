@@ -1,21 +1,13 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react'
-import { Link } from 'react-router-dom';
-import './styleSheet.css'
+import { Link } from 'react-router-dom'
 
-export const Contacts = () => {
-    
-      
+const Contacts = () => {
   return (
     <div>
-      <br />
-      <br />
-      <br />  
-      <br />
-      <Link to={'https://www.facebook.com/TunisianInternationalBalloonsFestival'}> <h1> Facebook page </h1> </Link>
-     
+     <br /><br /><br />
+        <Link to="https://www.facebook.com/TunisianInternationalBalloonsFestival"> <h2>Facebook Page </h2></Link>
     </div>
-      
-   
   )
 }
+
+export default Contacts
